@@ -1,0 +1,71 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "menu-voting"
+version = "2.0.1"
+description = "This a simple project to allow voting for specific menu from various restaurants"
+readme = "README.md"
+authors = ["Marc Philippe de Villeres <mpdevilleres@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/mpdevilleres/menu-voting"
+homepage = "https://github.com/mpdevilleres/menu-voting"
+keywords = [
+    "api",
+    "voting"
+]
+classifiers = [
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.9",
+    "Framework :: AsyncIO",
+    "Development Status :: 5 - Production/Stable",
+    "Environment :: Web Environment"
+]
+
+packages = [
+    { include = "app" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = "^0.68.0"
+python-multipart = "^0.0.5"
+python-jose = {extras = ["cryptography"], version = "^3.3.0"}
+passlib = {extras = ["argon2"], version = "^1.7.4"}
+uvicorn = {extras = ["standard"], version = "^0.15.0"}
+gunicorn = "^20.1.0"
+alembic = "^1.6.5"
+SQLAlchemy = {version = "1.4.22", extras = ["asyncio"]}
+asyncpg = "^0.24.0"
+
+[tool.poetry.dev-dependencies]
+pytest = "^6.2.4"
+pytest-asyncio = "^0.15.1"
+flake8 = "^3.9.2"
+black = "^21.7b0"
+isort = "^5.9.3"
+sqlalchemy2-stubs = "^0.0.2-alpha.8"
+httpx = "^0.18.2"
+factory-boy = "^3.2.0"
+ipython = "^7.26.0"
+freezegun = "^1.1.0"
+safety = "^1.10.3"
+bandit = "^1.7.0"
+
+[tool.black]
+# https://github.com/psf/black
+line-length = 80
+target-version = ["py39"]
+
+[tool.isort]
+# https://github.com/timothycrosley/isort/
+src_paths = ["app", "tests"]
+known_typing = "typing,types,typing_extensions,mypy,mypy_extensions"
+sections = "FUTURE,TYPING,STDLIB,THIRDPARTY,FIRSTPARTY,LOCALFOLDER"
+include_trailing_comma = true
+multi_line_output = 3
+indent = 4
+force_grid_wrap = 2
+use_parentheses = true
+line_length = 80
