@@ -11,8 +11,8 @@ def create_app():
     _app = FastAPI(
         title="Menu Voting API",
         version=version,
-        docs_url=None,
-        redoc_url="/api/docs",
+        docs_url='/api/docs',
+        redoc_url=None,
         openapi_url="/api/openapi.json",
     )
 
