@@ -62,4 +62,3 @@ Requirements:
 
 ## Extra
 - Argon2 - to hash the passwords safely argon2 is chosen instead of bcrypt refer to for more details
-- Additional Extra
